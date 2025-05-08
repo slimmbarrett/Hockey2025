@@ -1,5 +1,5 @@
-fastapi
-uvicorn
-python-dotenv
-requests
-psycopg2
+fastapi==0.100.0
+uvicorn[standard]==0.23.2
+python-dotenv==1.0.1
+requests==2.31.0
+psycopg2-binary==2.9.9
