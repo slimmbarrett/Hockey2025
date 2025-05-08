@@ -11,7 +11,6 @@ load_dotenv()
 
 app = FastAPI()
 
-# Разрешаем CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -20,14 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Подключение к PostgreSQL (Supabase)
 conn = psycopg2.connect(os.getenv("SUPABASE_DB_URL"))
 cursor = conn.cursor()
 
-# Telegram Bot
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
-# Модель для прогноза
 class Prediction(BaseModel):
     userId: str
     name: str
